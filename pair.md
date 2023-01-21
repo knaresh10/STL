@@ -8,6 +8,16 @@ pair<data_type1, data_type2> variable_name;
 ```cpp
 pair<data_type1, data_type2> variable_name = make_pair(value1, value2);
 ```
+#### or
+```cpp
+pair<data_type1, data_type2> variable_name(value1, value2);
+```
+
+#### or
+```cpp
+pair<data_type1, data_type2> variable_name = {value1, value2};
+```
+
 ## accessing elements
 ```cpp
 variable_name.first;
@@ -64,4 +74,37 @@ int main() {
  }
  cout<<endl;
 }
+```
+## output
+```cpp
+1 2 3
+4 5 6
+```
+## pair of arrays
+```cpp
+pair<int[], int[]> p;
+```
+## example
+```cpp
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+ int arr1[] = {1, 2, 3};
+ int arr2[] = {4, 5, 6};
+ pair<int[], int[]> p = make_pair(arr1, arr2);
+ for(int i = 0; i < 3; i++) {
+  cout<<p.first[i]<<" ";
+ }
+ cout<<endl;
+ for(int i = 0; i < 3; i++) {
+  cout<<p.second[i]<<" ";
+ }
+ cout<<endl;
+}
+``` 
+## output
+```cpp
+1 2 3
+4 5 6
 ```
