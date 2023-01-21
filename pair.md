@@ -29,7 +29,7 @@ variable_name.second;
 using namespace std;
 int main() {
  pair<int, int> p = {10, 20};
- cout<<p.first<<" "<<p.second<<endl;
+ cout<< p.first << " " << p.second << endl;
 }
 ```
 ## output
@@ -45,66 +45,32 @@ pair<pair<int, int>, int> p;
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
- pair<pair<int, int>, int> p = make_pair(make_pair(10, 20), 30);
- cout<<p.first.first<<" "<<p.first.second<<" "<<p.second<<endl;
+ pair<pair<int, int>, int> p = {{10, 20}, 30};
+ cout<< p.first.first << " " << p.first.second << " " << p.second << endl;
 }
 ```
 ## output
 ```cpp
 10 20 30
 ```
-## pair of vectors
+## array of pairs
 ```cpp
-pair<vector<int>, vector<int>> p;
+pair<int, int> p[];
 ```
 ## example
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
- vector<int> v1 = {1, 2, 3};
- vector<int> v2 = {4, 5, 6};
- pair<vector<int>, vector<int>> p = make_pair(v1, v2);
- for(int i = 0; i < p.first.size(); i++) {
-  cout<<p.first[i]<<" ";
- }
- cout<<endl;
- for(int i = 0; i < p.second.size(); i++) {
-  cout<<p.second[i]<<" ";
- }
- cout<<endl;
+    pair<int, int> p[] = {{1, 2}, {3, 12}, {10, 13}};
+    for (int i = 0; i < 3; i++) {
+        cout << p[i].first << " " << p[i].second << "\n";
+    }
 }
 ```
 ## output
 ```cpp
-1 2 3
-4 5 6
-```
-## pair of arrays
-```cpp
-pair<int[], int[]> p;
-```
-## example
-```cpp
-
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
- int arr1[] = {1, 2, 3};
- int arr2[] = {4, 5, 6};
- pair<int[], int[]> p = make_pair(arr1, arr2);
- for(int i = 0; i < 3; i++) {
-  cout<<p.first[i]<<" ";
- }
- cout<<endl;
- for(int i = 0; i < 3; i++) {
-  cout<<p.second[i]<<" ";
- }
- cout<<endl;
-}
-``` 
-## output
-```cpp
-1 2 3
-4 5 6
+1 2
+3 12
+10 13
 ```
