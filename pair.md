@@ -1,5 +1,5 @@
 # pairs
-pairs in stl can be used to store pairs of values.
+*pairs in stl can be used to store pairs of values. pairs are used to store two values of different data types.*
 ## declaration
 ```cpp
 pair<data_type1, data_type2> variable_name;
@@ -28,7 +28,7 @@ variable_name.second;
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
- pair<int, int> p = make_pair(10, 20);
+ pair<int, int> p = {10, 20};
  cout<<p.first<<" "<<p.second<<endl;
 }
 ```
