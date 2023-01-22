@@ -22,9 +22,11 @@ vector<data_type> variable_name(value1, value2, value3, ...);
 
 #### or
 
-## push_back() and emplace_back()
+### push_back()
 
 *push_back() function adds a new element at the end of the vector, after its current last element.*
+
+### emplace_back()
 
 *emplace_back() function is used to insert a new element into the vector container, the new element is added to the end of the vector.*
 
@@ -52,7 +54,7 @@ variable_name.emplace_back(value3);
 vector<data_type> variable_name(size);
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
@@ -65,7 +67,7 @@ int main() {
 }
 ```
 
-## output
+#### output
 
 ```cpp
 0 0 0 0 0
@@ -79,7 +81,7 @@ int main() {
 vector<data_type> variable_name(size, value);
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
@@ -92,21 +94,47 @@ int main() {
 }
 ```
 
-## output
+#### output
 
 ```cpp
 10 10 10
 ```
 
+#### or
 
+### copy constructor
 
-## accessing elements
+```cpp
+vector<data_type> variable_name(vector_name);
+```
+
+#### example
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> v1 = {10, 20, 30};
+    vector<int> v2(v1);
+    for (int i = 0; i < v2.size(); i++) {
+        cout << v2[i] << " ";
+    }
+}
+```
+
+#### output
+
+```cpp
+10 20 30
+```
+
+## Accessing elements
 
 ```cpp
 variable_name[index];
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
@@ -117,13 +145,15 @@ int main() {
 }
 ```
 
-## output
+#### output
 
 ```cpp
 10 20 30
 ```
 
-## iterating
+## Iterating
+
+### Index-based iteration
 
 ```cpp
 for(int i = 0; i < variable_name.size(); i++) {
@@ -131,15 +161,7 @@ for(int i = 0; i < variable_name.size(); i++) {
 }
 ```
 
-#### or
-
-```cpp
-for(auto i : variable_name) {
-    cout<< i << " ";
-}
-```
-
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
@@ -149,243 +171,151 @@ int main() {
     for (int i = 0; i < v.size(); i++) {
         cout << v[i] << " ";
     }
-    cout << endl;
-    for (auto i : v) {
-        cout << i << " ";
-    }
-    cout << endl;
 }
 ```
 
-## output
-
-```cpp
-10 20 30
-10 20 30
-```
-
-## size
-
-```cpp
-variable_name.size();
-```
-
-## example
-
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    vector<int> v = {10, 20, 30};
-    cout << v.size() << endl;
-}
-```
-
-## output
-
-```cpp
-3
-```
-
-## sorting
-
-```cpp
-sort(variable_name.begin(), variable_name.end());
-```
-
-## example
-
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    vector<int> v = {10, 20, 30};
-    sort(v.begin(), v.end());
-    for (auto i : v) {
-        cout << i << " ";
-    }
-}
-```
-
-## output
+#### output
 
 ```cpp
 10 20 30
 ```
 
-## reverse
+#### or
+
+### For-each loop
 
 ```cpp
-reverse(variable_name.begin(), variable_name.end());
+for(auto i : variable_name) {
+    cout<< i << " ";
+}
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
     vector<int> v = {10, 20, 30};
-    reverse(v.begin(), v.end());
     for (auto i : v) {
         cout << i << " ";
     }
 }
 ```
 
-## output
+#### output
 
 ```cpp
-30 20 10
+10 20 30
 ```
 
-## inserting elements
+### iterator based iteration
 
 ```cpp
-variable_name.insert(variable_name.begin() + index, value);
+for(auto i = variable_name.begin(); i != variable_name.end(); i++) {
+    cout<< *i << " ";
+}
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
     vector<int> v = {10, 20, 30};
-    v.insert(v.begin() + 1, 15);
+    for (auto i = v.begin(); i != v.end(); i++) {
+        cout << *i << " ";
+    }
+}
+```
+
+#### output
+
+```cpp
+10 20 30
+```
+
+## 2D vector
+
+```cpp
+vector<vector<int>> variable_name;
+```
+
+#### example
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<vector<int>> v = {{10, 20, 30}, {40, 50, 60}};
     for (auto i : v) {
-        cout << i << " ";
+        for (auto j : i) {
+            cout << j << " ";
+        }
+        cout << endl;
     }
 }
 ```
 
-## output
+#### output
 
 ```cpp
-10 15 20 30
+10 20 30
+40 50 60
 ```
 
-## deleting elements
+## vector of pairs
 
 ```cpp
-variable_name.erase(variable_name.begin() + index);
+vector<pair<int, int>> variable_name;
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
-    vector<int> v = {10, 20, 30};
-    v.erase(v.begin() + 1);
+    vector<pair<int, int>> v = {{10, 20}, {30, 40}};
     for (auto i : v) {
-        cout << i << " ";
+        cout << i.first << " " << i.second << endl;
     }
 }
 ```
 
-## output
+#### output
 
 ```cpp
-10 30
+10 20
+30 40
 ```
 
-## deleting all elements
+## vector of strings
 
 ```cpp
-variable_name.clear();
+vector<string> variable_name;
 ```
 
-## example
+#### example
 
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
 int main() {
-    vector<int> v = {10, 20, 30};
-    v.clear();
-    cout<< v.size() << endl;
-}
-```
-
-## output
-
-```cpp
-0
-```
-
-## searching
-
-```cpp
-find(variable_name.begin(), variable_name.end(), value);
-```
-
-## example
-
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    vector<int> v = {10, 20, 30};
-    auto it = find(v.begin(), v.end(), 20);
-    if(it != v.end()) {
-        cout<< "found" << endl;
-    }
-    else {
-        cout<< "not found" << endl;
+    vector<string> v = {"abc", "def", "ghi"};
+    for (auto i : v) {
+        cout << i << endl;
     }
 }
 ```
 
-## output
+#### output
 
 ```cpp
-found
+abc
+def
+ghi
 ```
 
-## max element
 
-```cpp
-*max_element(variable_name.begin(), variable_name.end());
-```
-
-## example
-
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    vector<int> v = {10, 20, 30};
-    cout<< *max_element(v.begin(), v.end()) << endl;
-}
-```
-
-## output
-
-```cpp
-30
-```
-
-## min element
-
-```cpp
-*min_element(variable_name.begin(), variable_name.end());
-```
-
-## example
-
-```cpp
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    vector<int> v = {10, 20, 30};
-    cout<< *min_element(v.begin(), v.end()) << endl;
-}
-```
-
-## output
-
-```cpp
-10
-```
